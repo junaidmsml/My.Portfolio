@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Junaid | Academic Portfolio · Civil Engineering Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0a1f3c;--navy2:#14315a;--accent:#2563eb;--accent2:#3b82f6;
+  --gold:#c8a96a;--bg:#fbfcfe;--bg2:#f1f5fa;--text:#0f172a;
+  --muted:#5a6c86;--border:#e3e9f2;--white:#fff;
+  --sh1:0 1px 3px rgba(10,31,60,.04);--sh2:0 8px 24px rgba(10,31,60,.06);
+  --sh3:0 20px 48px rgba(10,31,60,.10);
+  --sans:'Inter',system-ui,sans-serif;--serif:'Cormorant Garamond',Georgia,serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid transparent;transition:.3s}
+.navbar.scrolled{border-bottom-color:var(--border);box-shadow:var(--sh1);background:rgba(255,255,255,.95)}
+.nav-container{max-width:1280px;margin:0 auto;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:.7rem;font-weight:700}
+.logo-mark{width:40px;height:40px;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:12px;display:grid;place-items:center;font-size:.85rem;letter-spacing:.05em;font-weight:800}
+.logo-text{font-size:1.15rem;color:var(--navy);letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:.3rem}
+.nav-links a{padding:.55rem 1rem;font-size:.9rem;font-weight:500;color:var(--muted);border-radius:10px;transition:.2s}
+.nav-links a:hover{color:var(--navy);background:var(--bg2)}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:.6rem 1.4rem!important;border-radius:40px!important}
+.nav-cta:hover{background:var(--accent)!important;transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--navy);cursor:pointer;padding:.4rem .7rem;border-radius:10px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(37,99,235,.08),transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(200,169,106,.08),transparent 50%),linear-gradient(180deg,#fbfcfe,#f1f5fa);z-index:-2}
+.hero-bg::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(10,31,60,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(10,31,60,.025) 1px,transparent 1px);background-size:60px 60px;z-index:-1}
+.hero-content{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--border);padding:.5rem 1.1rem;border-radius:40px;font-size:.82rem;font-weight:600;color:var(--navy);letter-spacing:.02em;box-shadow:var(--sh1);margin-bottom:1.5rem}
+.hero-tag i{color:var(--accent)}
+.hero-title{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--navy);margin-bottom:1.3rem}
+.hero-title .accent{background:linear-gradient(135deg,var(--accent),var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic;font-weight:700}
+.hero-subtitle{font-size:1.05rem;color:var(--muted);max-width:560px;margin-bottom:2rem;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:.95rem 1.8rem;border-radius:40px;font-weight:600;font-size:.95rem;transition:.25s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 6px 20px rgba(10,31,60,.18)}
+.btn-primary:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 12px 28px rgba(37,99,235,.28)}
+.btn-ghost{background:#fff;color:var(--navy);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--navy);background:var(--bg2);transform:translateY(-2px)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat-number{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-label{font-size:.82rem;color:var(--muted);font-weight:500;margin-top:.3rem;letter-spacing:.02em}
+.hero-image{position:relative;display:flex;justify-content:center;align-items:center}
+.image-frame{position:relative;width:100%;max-width:420px;aspect-ratio:4/5;border-radius:32px;overflow:hidden;box-shadow:var(--sh3);background:linear-gradient(135deg,var(--navy),var(--accent));padding:6px}
+.image-frame img{width:100%;height:100%;object-fit:cover;border-radius:26px}
+.floating-badge{position:absolute;background:#fff;padding:.6rem 1rem;border-radius:40px;box-shadow:var(--sh2);display:flex;align-items:center;gap:.5rem;font-size:.82rem;font-weight:600;color:var(--navy);border:1px solid var(--border)}
+.floating-badge i{color:var(--accent)}
+.badge-1{top:8%;right:-8%;animation:float 4s ease-in-out infinite}
+.badge-2{bottom:22%;left:-10%;animation:float 4s ease-in-out infinite .5s}
+.badge-3{bottom:5%;right:5%;animation:float 4s ease-in-out infinite 1s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;font-size:.75rem;color:var(--muted);letter-spacing:.15em;text-transform:uppercase;font-weight:600}
+.scroll-indicator i{animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* SECTIONS */
+.section{padding:6rem 2rem;position:relative}
+.section-alt{background:var(--bg2)}
+.container{max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3.5rem}
+.section-header.left{text-align:left;margin-bottom:2rem}
+.section-tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
+.section-title{font-family:var(--serif);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:600;color:var(--navy);letter-spacing:-.02em;line-height:1.15}
+.section-subtitle{font-size:1rem;color:var(--muted);max-width:620px;margin:1rem auto 0}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.about-text p{font-size:1.02rem;color:var(--muted);margin-bottom:1.2rem;line-height:1.8}
+.about-text strong{color:var(--navy);font-weight:600}
+.about-highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:2rem}
+.highlight{background:#fff;padding:1.3rem;border-radius:16px;border:1px solid var(--border);box-shadow:var(--sh1);transition:.25s}
+.highlight:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--accent)}
+.highlight i{font-size:1.5rem;color:var(--accent);margin-bottom:.7rem;display:block}
+.highlight h4{font-size:.95rem;color:var(--navy);margin-bottom:.3rem;font-weight:600}
+.highlight p{font-size:.82rem;color:var(--muted)}
+.info-card{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:2rem;border-radius:24px;box-shadow:var(--sh3)}
+.info-card h4{font-size:1rem;margin-bottom:1.3rem;display:flex;align-items:center;gap:.6rem;color:var(--gold)}
+.info-card ul li{display:flex;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.88rem}
+.info-card ul li:last-child{border-bottom:none}
+.info-card ul li span{color:rgba(255,255,255,.65)}
+.info-card ul li strong{color:#fff;font-weight:600}
+
+/* EDUCATION */
+.edu-card{background:#fff;border-radius:24px;padding:2.5rem;display:flex;gap:2rem;align-items:center;border:1px solid var(--border);box-shadow:var(--sh2);max-width:900px;margin:0 auto;transition:.3s}
+.edu-card:hover{transform:translateY(-4px);box-shadow:var(--sh3)}
+.edu-icon{width:80px;height:80px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:20px;display:grid;place-items:center;font-size:2rem}
+.edu-content{flex:1}
+.edu-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:.6rem}
+.edu-head h3{font-size:1.3rem;color:var(--navy);font-weight:700;letter-spacing:-.01em}
+.edu-degree{color:var(--accent);font-weight:600;font-size:1rem;margin-top:.2rem}
+.edu-year{background:var(--bg2);padding:.4rem 1rem;border-radius:40px;font-size:.82rem;font-weight:600;color:var(--navy);white-space:nowrap}
+.edu-location{color:var(--muted);font-size:.9rem;display:flex;align-items:center;gap:.4rem}
+.edu-location i{color:var(--accent)}
+
+/* ACHIEVEMENTS */
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
+.achievement-card{background:#fff;border-radius:22px;padding:2rem 1.8rem;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s;position:relative;overflow:hidden}
+.achievement-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold))}
+.achievement-card:hover{transform:translateY(-6px);box-shadow:var(--sh3);border-color:var(--accent)}
+.ach-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:1.2rem}
+.ach-icon img{width:38px;height:38px;object-fit:contain}
+.achievement-card h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em;line-height:1.4}
+.achievement-card p{font-size:.92rem;color:var(--muted);line-height:1.75}
+.achievement-card .ach-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--gold));color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .85rem;border-radius:40px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
+
+/* TIMELINE */
+.timeline{position:relative;max-width:960px;margin:0 auto;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent),var(--gold))}
+.timeline-item{position:relative;padding-bottom:2.5rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-marker{position:absolute;left:-2rem;top:8px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px rgba(37,99,235,.12)}
+.timeline-content{background:#fff;border-radius:20px;padding:1.8rem 2rem;border:1px solid var(--border);box-shadow:var(--sh2);transition:.25s}
+.timeline-content:hover{transform:translateX(4px);box-shadow:var(--sh3)}
+.timeline-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:.4rem}
+.timeline-head h3{font-size:1.2rem;color:var(--navy);font-weight:700;letter-spacing:-.01em}
+.timeline-date{background:var(--bg2);padding:.35rem 1rem;border-radius:40px;font-size:.78rem;font-weight:600;color:var(--navy);white-space:nowrap}
+.timeline-role{font-size:.88rem;color:var(--accent);font-weight:600;margin-bottom:1rem}
+.timeline-content ul li{position:relative;padding-left:1.4rem;margin-bottom:.7rem;font-size:.95rem;color:var(--muted);line-height:1.7}
+.timeline-content ul li::before{content:'';position:absolute;left:0;top:.7rem;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.timeline-content ul li strong{color:var(--navy);font-weight:600}
+
+/* CAROUSEL */
+.carousel{position:relative;margin-top:1.4rem;border-radius:16px;overflow:hidden;background:#0a1f3c;aspect-ratio:16/9}
+.carousel-track{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform}
+.carousel-slide{min-width:100%;height:100%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#0a1f3c;position:relative}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);color:var(--navy);border:none;cursor:pointer;display:grid;place-items:center;font-size:.9rem;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:.2s;z-index:5}
+.carousel-btn:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.carousel-btn.prev{left:.8rem}
+.carousel-btn.next{right:.8rem}
+.carousel-dots{position:absolute;bottom:.8rem;left:50%;transform:translateX(-50%);display:flex;gap:.4rem;z-index:5}
+.carousel-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.5);border:none;cursor:pointer;padding:0;transition:.2s}
+.carousel-dot.active{background:#fff;width:22px;border-radius:4px}
+.carousel-counter{position:absolute;top:.8rem;right:.9rem;background:rgba(10,31,60,.75);backdrop-filter:blur(6px);color:#fff;font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:40px;z-index:5}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem}
+.project-card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh1);transition:.35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-8px);box-shadow:var(--sh3);border-color:var(--accent)}
+.project-image{position:relative;height:210px;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--accent))}
+.project-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.project-card:hover .project-image img{transform:scale(1.06)}
+.project-badge{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.35rem 1rem;border-radius:40px;font-size:.75rem;font-weight:700;color:var(--navy);letter-spacing:.04em;text-transform:uppercase}
+.project-body{padding:1.7rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
+.project-body h3{font-size:1.15rem;color:var(--navy);font-weight:700;letter-spacing:-.01em;line-height:1.35;margin-bottom:.5rem}
+.project-location{font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.project-desc{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem;flex:1}
+.project-tags{display:flex;flex-wrap:wrap;gap:.5rem;padding-top:1rem;border-top:1px solid var(--border)}
+.project-tags span{background:var(--bg2);color:var(--navy);font-size:.75rem;font-weight:600;padding:.35rem .85rem;border-radius:40px;border:1px solid var(--border)}
+
+/* SURVEY */
+.survey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-bottom:2.5rem}
+.survey-item{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
+.survey-item:hover{transform:translateY(-6px);box-shadow:var(--sh3)}
+.survey-item img{width:100%;height:240px;object-fit:cover;transition:.5s}
+.survey-item:hover img{transform:scale(1.05)}
+.survey-caption{padding:1.2rem 1.4rem}
+.survey-caption h4{font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:.2rem}
+.survey-caption p{font-size:.85rem;color:var(--muted)}
+.survey-desc{background:#fff;padding:1.8rem 2rem;border-radius:20px;border:1px solid var(--border);border-left:4px solid var(--accent);box-shadow:var(--sh1)}
+.survey-desc p{font-size:.98rem;color:var(--muted);line-height:1.8}
+
+/* EXPERIENCE */
+.exp-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:1000px;margin:0 auto}
+.exp-card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh2);transition:.3s}
+.exp-card:hover{box-shadow:var(--sh3)}
+.exp-head{padding:1.8rem 2rem .6rem}
+.exp-head h3{font-size:1.25rem;color:var(--navy);font-weight:700;letter-spacing:-.01em;margin-bottom:.3rem}
+.exp-role{font-size:.88rem;color:var(--accent);font-weight:600}
+.exp-date{background:var(--bg2);padding:.35rem .9rem;border-radius:40px;font-size:.78rem;font-weight:600;color:var(--navy);white-space:nowrap;float:right;margin-top:-2.4rem}
+.exp-location{padding:0 2rem 1rem;font-size:.85rem;color:var(--muted);display:flex;align-items:center;gap:.4rem}
+.exp-location i{color:var(--accent)}
+.exp-list{padding:0 2rem 2rem}
+.exp-list li{position:relative;padding-left:1.4rem;margin-bottom:.65rem;font-size:.92rem;color:var(--muted);line-height:1.7}
+.exp-list li::before{content:'';position:absolute;left:0;top:.65rem;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+/* SKILLS WITH LOGOS */
+.skills-wrapper{display:flex;flex-direction:column;gap:3rem}
+.skill-block{background:#fff;border-radius:24px;padding:2.2rem 2rem;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
+.skill-block:hover{box-shadow:var(--sh2)}
+.skill-block-head{display:flex;align-items:center;gap:1rem;margin-bottom:1.8rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+.skill-block-icon{width:54px;height:54px;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;flex-shrink:0}
+.skill-block-head h3{font-size:1.2rem;color:var(--navy);font-weight:700;letter-spacing:-.01em}
+.skill-block-head p{font-size:.85rem;color:var(--muted);margin-top:.15rem}
+.skill-items{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem}
+.skill-item{background:var(--bg);padding:1.1rem .9rem;border-radius:14px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem;transition:.25s;cursor:default}
+.skill-item:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--accent);background:#fff}
+.skill-item img{width:44px;height:44px;object-fit:contain}
+.skill-item .skill-fa{width:44px;height:44px;display:grid;place-items:center;font-size:1.5rem;color:var(--accent);background:rgba(37,99,235,.08);border-radius:12px}
+.skill-item span{font-size:.82rem;font-weight:600;color:var(--navy);line-height:1.3}
+
+/* CERTS */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cert-card{background:#fff;padding:1.8rem;border-radius:20px;display:flex;gap:1.3rem;align-items:flex-start;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--accent)}
+.cert-icon{width:56px;height:56px;flex-shrink:0;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:14px;display:grid;place-items:center;font-size:1.3rem}
+.cert-icon img{width:36px;height:36px;object-fit:contain}
+.cert-card h3{font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:.3rem}
+.cert-card p{font-size:.85rem;color:var(--muted);line-height:1.6}
+.cert-id{font-family:monospace;color:var(--accent);font-weight:600;font-size:.8rem;margin-top:.4rem}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.contact-card{background:#fff;padding:2rem 1.5rem;border-radius:20px;text-align:center;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
+.contact-card:hover{transform:translateY(-6px);box-shadow:var(--sh3);border-color:var(--accent)}
+.contact-card i{font-size:1.8rem;color:var(--accent);margin-bottom:1rem;display:block}
+.contact-card h4{font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:.4rem}
+.contact-card p{font-size:.85rem;color:var(--muted);word-break:break-word}
+
+/* FOOTER */
+.footer{background:var(--navy);color:rgba(255,255,255,.75);padding:3rem 2rem 2rem;text-align:center}
+.footer p{font-size:.9rem}
+.footer-sub{margin-top:.5rem;font-size:.8rem;color:rgba(255,255,255,.5)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-content{grid-template-columns:1fr;text-align:center;gap:3rem}
+  .hero-subtitle{margin-left:auto;margin-right:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .two-col{grid-template-columns:1fr;gap:2rem}
+  .edu-card{flex-direction:column;text-align:center;padding:2rem}
+  .edu-head{flex-direction:column;align-items:center}
+  .timeline{padding-left:1.5rem}
+}
+@media(max-width:768px){
+  .nav-toggle{display:block}
+  .nav-links{position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:1rem;gap:.3rem;border-top:1px solid var(--border);box-shadow:var(--sh2);transform:translateY(-120%);opacity:0;pointer-events:none;transition:.3s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links a{width:100%;text-align:center;padding:.85rem}
+  .section{padding:4.5rem 1.5rem}
+  .hero{padding:6rem 1.5rem 4rem}
+  .floating-badge{font-size:.75rem;padding:.5rem .8rem}
+  .badge-1{right:-2%}.badge-2{left:-2%}.badge-3{right:2%}
+  .timeline-head,.exp-head{flex-direction:column;gap:.5rem}
+  .scroll-indicator{display:none}
+  .exp-date{float:none;display:inline-block;margin-top:.5rem}
+}
+@media(max-width:480px){
+  .hero-title{font-size:2rem}
+  .hero-stats{gap:1.5rem}
+  .stat-number{font-size:1.6rem}
+  .btn{padding:.85rem 1.4rem;font-size:.88rem}
+  .timeline-content,.exp-list{padding:1.4rem 1.3rem}
+  .skill-items{grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:.7rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo">
+      <span class="logo-mark">JM</span>
+      <span class="logo-text">Portfolio</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#survey">Survey</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-tag"><i class="fas fa-graduation-cap"></i> BE Civil Engineering · NUST</span>
+      <h1 class="hero-title">Numerical Modelling of <span class="accent">Geotechnical</span>, Water & Environmental Hazards</h1>
+      <p class="hero-subtitle">Civil engineering undergraduate specializing in PLAXIS, GeoStudio, and HEC-RAS applications across forensic geotechnical, permafrost, and flood/seepage case studies.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-flask"></i> View Research</a>
+        <a href="#contact" class="btn btn-ghost"><i class="fas fa-paper-plane"></i> Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-number">6+</span><span class="stat-label">Research Projects</span></div>
+        <div class="stat"><span class="stat-number">3</span><span class="stat-label">Achievements</span></div>
+        <div class="stat"><span class="stat-number">2</span><span class="stat-label">Industry Internships</span></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="image-frame"><img src="images/profile.png" alt="Junaid" /></div>
+      <div class="floating-badge badge-1"><i class="fas fa-mountain"></i><span>Permafrost</span></div>
+      <div class="floating-badge badge-2"><i class="fas fa-water"></i><span>Seepage</span></div>
+      <div class="floating-badge badge-3"><i class="fas fa-wave-square"></i><span>Flood</span></div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-indicator"><span>Scroll</span><i class="fas fa-chevron-down"></i></a>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">About</span>
+      <h2 class="section-title">Profile</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Civil engineering undergraduate focused on <strong>numerical modelling of geotechnical, water, and environmental hazards</strong>. Hands-on with PLAXIS, GeoStudio (SEEP/W, SLOPE/W, TEMP/W), and HEC-RAS across forensic geotechnical, permafrost, and flood/seepage case studies.</p>
+        <p>Current work spans <strong>differential-settlement analysis of a heritage structure</strong>, <strong>Yukon permafrost characterization</strong>, and <strong>coupled thermal-seepage modelling of cold-region embankments</strong>.</p>
+        <div class="about-highlights">
+          <div class="highlight"><i class="fas fa-drafting-compass"></i><h4>Numerical Modelling</h4><p>PLAXIS · GeoStudio · HEC-RAS</p></div>
+          <div class="highlight"><i class="fas fa-map-marked-alt"></i><h4>GIS & Surveying</h4><p>ArcGIS · AutoCAD · LISCAD</p></div>
+          <div class="highlight"><i class="fas fa-code"></i><h4>Automation</h4><p>Python · NumPy · Excel</p></div>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="info-card">
+          <h4><i class="fas fa-user"></i> Personal Info</h4>
+          <ul>
+            <li><span>Location</span><strong>Faisalabad, PK</strong></li>
+            <li><span>Degree</span><strong>BE Civil Engineering</strong></li>
+            <li><span>University</span><strong>NUST</strong></li>
+            <li><span>Timeline</span><strong>2024 – 2028</strong></li>
+            <li><span>Languages</span><strong>English, Urdu</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Academics</span>
+      <h2 class="section-title">Education</h2>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon"><i class="fas fa-university"></i></div>
+      <div class="edu-content">
+        <div class="edu-head">
+          <div>
+            <h3>National University of Sciences and Technology (NUST)</h3>
+            <p class="edu-degree">BE Civil Engineering</p>
+          </div>
+          <span class="edu-year">2024 – 2028</span>
+        </div>
+        <p class="edu-location"><i class="fas fa-map-pin"></i> Islamabad, Pakistan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Recognition</span>
+      <h2 class="section-title">Achievements</h2>
+      <p class="section-subtitle">Selected honors and academic distinctions earned through research, leadership, and coursework.</p>
+    </div>
+    <div class="achievements-grid">
+
+      <div class="achievement-card">
+        <div class="ach-icon"><i class="fas fa-award"></i></div>
+        <span class="ach-badge">Research Selection</span>
+        <h3>Selected for University-Funded Research Project</h3>
+        <p>Selected from a pool of over <strong>100 students</strong> to join a university-funded research project under <strong>Dr. Zulfiqar Ali</strong>, based on demonstrated technical skills and critical thinking — an uncommon opportunity for undergraduates.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="ach-icon"><i class="fas fa-users-cog"></i></div>
+        <span class="ach-badge">Leadership</span>
+        <h3>Top-2 Ranking in Advanced Engineering Survey</h3>
+        <p>Led my team to a <strong>top-2 ranking among 15 groups</strong> during a university-wide 1-week Advanced Engineering Survey, showcasing strong leadership in field data collection and technical reporting.</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="ach-icon"><i class="fas fa-trophy"></i></div>
+        <span class="ach-badge">Academic Excellence</span>
+        <h3>Highest Grade in Soil Mechanics</h3>
+        <p>Achieved the <strong>highest grade among 50 students</strong> in Soil Mechanics, building the strong theoretical foundation that now underpins my geotechnical research.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section class="section section-alt" id="research">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Research</span>
+      <h2 class="section-title">Research Experience</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-head">
+            <h3>Forensic Geotechnical Assessment of a Historic Landmark</h3>
+            <span class="timeline-date">Jun 2026 – Present</span>
+          </div>
+          <p class="timeline-role">Undergraduate Researcher · Faculty-Supervised (Dr. Zulfiqar Ali) · University-Funded</p>
+          <ul>
+            <li>Investigated multiple potential causes of structural cracking in a nationally significant heritage building, including seismic history and vegetation-induced weakening of the surrounding ground.</li>
+            <li>Assessed differential settlement as a contributing factor to the observed cracking, alongside the seismic and vegetation-related causes under study.</li>
+            <li>Currently performing numerical modelling in <strong>PLAXIS</strong> to quantify differential settlement's relative contribution to the structural distress.</li>
+          </ul>
+
+          <!-- Carousel: 4 images -->
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="images/research/heritage1.png" alt="Heritage 1"></div>
+              <div class="carousel-slide"><img src="images/research/heritage2.png" alt="Heritage 2"></div>
+              <div class="carousel-slide"><img src="images/research/heritage3.png" alt="Heritage 3"></div>
+              <div class="carousel-slide"><img src="images/research/heritage4.png" alt="Heritage 4"></div>
+            </div>
+            <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-counter" data-counter>1 / 4</div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-head">
+            <h3>Yukon Permafrost Site Characterization</h3>
+            <span class="timeline-date">Aug 2026 – Present</span>
+          </div>
+          <p class="timeline-role">Independent Researcher · Remote</p>
+          <ul>
+            <li>Independently investigating permafrost conditions and subsurface characteristics using publicly available field, geotechnical, and thermal observations from the <strong>Yukon Permafrost Database</strong>.</li>
+            <li>Characterizing Site 244-00 using available subsurface profiles, geotechnical properties, ice observations, and nearby temperature-monitoring data toward a research-based manuscript.</li>
+          </ul>
+
+          <!-- Carousel: 4 images -->
+          <div class="carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide"><img src="images/research/yukon1.png" alt="Yukon 1"></div>
+              <div class="carousel-slide"><img src="images/research/yukon2.png" alt="Yukon 2"></div>
+              <div class="carousel-slide"><img src="images/research/yukon3.png" alt="Yukon 3"></div>
+              <div class="carousel-slide"><img src="images/research/yukon4.png" alt="Yukon 4"></div>
+            </div>
+            <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-counter" data-counter>1 / 4</div>
+            <div class="carousel-dots" data-dots></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Selected Research Projects</h2>
+      <p class="section-subtitle">Numerical modelling, GIS analysis, and computational work across geotechnical, water, and environmental domains.</p>
+    </div>
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/embankment-thermal.png" alt="Embankment Thermal-Seepage"><span class="project-badge">GeoStudio</span></div>
+        <div class="project-body">
+          <h3>Cold-Region Embankment Thermal-Seepage Behaviour</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Qinghai-Tibet Plateau, China</p>
+          <p class="project-desc">Built a coupled seepage-thermal numerical model in GeoStudio (SEEP/W & TEMP/W) to simulate freeze-thaw cycles, validating model accuracy against published field results.</p>
+          <div class="project-tags"><span>SEEP/W</span><span>TEMP/W</span><span>Freeze-Thaw</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/earth-dam.png" alt="Earth Dam"><span class="project-badge">SLOPE/W</span></div>
+        <div class="project-body">
+          <h3>Earth Dam on Silt/Clay Tailings</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Loxahatchee L-8 Reservoir, FL, USA</p>
+          <p class="project-desc">Independently built SEEP/W models to investigate steady-state and rapid-drawdown seepage, then used SLOPE/W to evaluate factor of safety under operational and drawdown conditions.</p>
+          <div class="project-tags"><span>SEEP/W</span><span>SLOPE/W</span><span>Seepage</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/flood-inundation.png" alt="Flood Inundation"><span class="project-badge">HEC-RAS</span></div>
+        <div class="project-body">
+          <h3>Flood Inundation Modelling of Saint John River</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> New Brunswick, Canada</p>
+          <p class="project-desc">Developed a 2D flood model integrating 1m LiDAR DEM, CHS bathymetric data, and hydrometric records to simulate flood propagation and generate flood-hazard maps.</p>
+          <div class="project-tags"><span>ArcGIS</span><span>HEC-RAS 2D</span><span>LiDAR</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/rainfall-variability.png" alt="Rainfall Variability"><span class="project-badge">GIS</span></div>
+        <div class="project-body">
+          <h3>Rainfall Variability & Flood-Impact Assessment</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Khyber Pakhtunkhwa, Pakistan</p>
+          <p class="project-desc">Investigated spatiotemporal rainfall variability (2018–2025) using PERSIANN-CCS/CDR data and GIS-based spatial analysis, quantifying the 2022 rainfall anomaly and its relationship with flood impacts.</p>
+          <div class="project-tags"><span>PERSIANN</span><span>GIS</span><span>Climate</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/road-embankment.png" alt="Road Embankment"><span class="project-badge">PLAXIS</span></div>
+        <div class="project-body">
+          <h3>Automated Geotechnical Analysis of Road Embankment</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
+          <p class="project-desc">Developed a finite element model in PLAXIS to evaluate settlement and slope stability across multiple construction phases, with a Python automation script for post-processing.</p>
+          <div class="project-tags"><span>PLAXIS 2D</span><span>Python</span><span>Automation</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/buildease.png" alt="Build Ease"><span class="project-badge">Python</span></div>
+        <div class="project-body">
+          <h3>Build Ease — Civil Engineering Suite</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
+          <p class="project-desc">Developed a construction management suite with 9 engineering tools spanning pre-construction, execution, and handover — including geotechnical scoring, ACI mix design, and cost estimation.</p>
+          <div class="project-tags"><span>Python</span><span>NumPy</span><span>Web</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/heritage-cracking.png" alt="Heritage Cracking"><span class="project-badge">PLAXIS</span></div>
+        <div class="project-body">
+          <h3>Forensic Geotechnical Assessment of a Historic Landmark</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Islamabad, Pakistan</p>
+          <p class="project-desc">Investigating multiple causes of structural cracking — seismic history, vegetation-induced weakening, and differential settlement — using numerical modelling in PLAXIS.</p>
+          <div class="project-tags"><span>PLAXIS</span><span>Forensic</span><span>Settlement</span></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/yukon-permafrost.png" alt="Yukon Permafrost"><span class="project-badge">Research</span></div>
+        <div class="project-body">
+          <h3>Yukon Permafrost Site Characterization</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Yukon, Canada</p>
+          <p class="project-desc">Characterizing Site 244-00 using subsurface profiles, geotechnical properties, ice observations, and temperature-monitoring data toward a research-based manuscript.</p>
+          <div class="project-tags"><span>Permafrost</span><span>Geotechnical</span><span>Thermal</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SURVEY -->
+<section class="section section-alt" id="survey">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Fieldwork</span>
+      <h2 class="section-title">Advanced Engineering Survey</h2>
+      <p class="section-subtitle">Team Lead · 1-Week Field Survey · Top-2 ranking among 15 groups</p>
+    </div>
+    <div class="survey-grid">
+      <div class="survey-item"><img src="images/survey/survey1.png" alt="Survey 1"><div class="survey-caption"><h4>Topographic Survey</h4><p>Total station traversing & data collection</p></div></div>
+      <div class="survey-item"><img src="images/survey/survey2.png" alt="Survey 2"><div class="survey-caption"><h4>Road Alignment</h4><p>Curve setting & alignment procedures</p></div></div>
+      <div class="survey-item"><img src="images/survey/survey3.png" alt="Survey 3"><div class="survey-caption"><h4>Data Processing</h4><p>LISCAD & AutoCAD drawings</p></div></div>
+    </div>
+    <div class="survey-desc">
+      <p>Led my team through traversing, topographic survey, and road alignment & curve setting using total station equipment. Converted raw Stonex instrument data into readable format, processed it in LISCAD, and produced final drawings and technical report in AutoCAD for submission. Our team achieved a <strong>top-2 ranking among 15 groups</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Industry</span>
+      <h2 class="section-title">Industrial Experience</h2>
+    </div>
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <span class="exp-date">Jun – Aug</span>
+          <h3>Military Engineering Services (MES)</h3>
+          <p class="exp-role">Site Intern</p>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-pin"></i> Risalpur, Pakistan</p>
+        <ul class="exp-list">
+          <li>Gained exposure to active construction-site operations through site inspection, observation, and QA/QC procedures.</li>
+          <li>Assisted with construction activities, site coordination practices, and engineering documentation under site engineers and supervisors.</li>
+        </ul>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/experience/mes1.png" alt="MES 1"></div>
+            <div class="carousel-slide"><img src="images/experience/mes2.png" alt="MES 2"></div>
+            <div class="carousel-slide"><img src="images/experience/mes3.png" alt="MES 3"></div>
+            <div class="carousel-slide"><img src="images/experience/mes4.png" alt="MES 4"></div>
+          </div>
+          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-counter" data-counter>1 / 4</div>
+          <div class="carousel-dots" data-dots></div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <span class="exp-date">Jun – Jul 2025</span>
+          <h3>QAP Engineers (Pvt) Limited</h3>
+          <p class="exp-role">Site Intern</p>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-pin"></i> Faisalabad, Pakistan</p>
+        <ul class="exp-list">
+          <li>Gained practical exposure to road construction through site observation and QA/QC activities.</li>
+          <li>Learned about road drainage infrastructure, manhole works, and interpreting engineering drawings used for site execution.</li>
+        </ul>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/experience/qap1.png" alt="QAP 1"></div>
+            <div class="carousel-slide"><img src="images/experience/qap2.png" alt="QAP 2"></div>
+            <div class="carousel-slide"><img src="images/experience/qap3.png" alt="QAP 3"></div>
+            <div class="carousel-slide"><img src="images/experience/qap4.png" alt="QAP 4"></div>
+          </div>
+          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-counter" data-counter>1 / 4</div>
+          <div class="carousel-dots" data-dots></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS WITH LOGOS -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Expertise</span>
+      <h2 class="section-title">Skills & Tools</h2>
+      <p class="section-subtitle">Each tool with its official logo for quick visual recognition.</p>
+    </div>
+
+    <div class="skills-wrapper">
+
+      <!-- Numerical Modelling -->
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <div class="skill-block-icon"><i class="fas fa-cubes"></i></div>
+          <div>
+            <h3>Numerical Modelling</h3>
+            <p>Finite element & seepage-thermal simulation tools</p>
+          </div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item"><img src="images/logos/plaxis.png" alt="PLAXIS"><span>PLAXIS 2D</span></div>
+          <div class="skill-item"><img src="images/logos/geostudio.png" alt="GeoStudio"><span>GeoStudio</span></div>
+          <div class="skill-item"><img src="images/logos/hecras.png" alt="HEC-RAS"><span>HEC-RAS 2D</span></div>
+        </div>
+      </div>
+
+      <!-- GIS & Surveying -->
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <div class="skill-block-icon"><i class="fas fa-map"></i></div>
+          <div>
+            <h3>GIS & Surveying</h3>
+            <p>Mapping, drafting, and field data processing tools</p>
+          </div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item"><img src="images/logos/arcgis.png" alt="ArcGIS"><span>ArcGIS</span></div>
+          <div class="skill-item"><img src="images/logos/autocad.png" alt="AutoCAD"><span>AutoCAD</span></div>
+          <div class="skill-item"><img src="images/logos/liscad.png" alt="LISCAD"><span>LISCAD</span></div>
+          <div class="skill-item"><img src="images/logos/stonex.png" alt="Stonex"><span>Stonex GNSS</span></div>
+        </div>
+      </div>
+
+      <!-- Data Processing -->
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <div class="skill-block-icon"><i class="fas fa-code"></i></div>
+          <div>
+            <h3>Data Processing & Automation</h3>
+            <p>Programming and spreadsheet tools</p>
+          </div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item"><img src="images/logos/python.png" alt="Python"><span>Python</span></div>
+          <div class="skill-item"><img src="images/logos/numpy.png" alt="NumPy"><span>NumPy</span></div>
+          <div class="skill-item"><img src="images/logos/excel.png" alt="MS Excel"><span>MS Excel</span></div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="skill-block">
+        <div class="skill-block-head">
+          <div class="skill-block-icon"><i class="fas fa-users"></i></div>
+          <div>
+            <h3>Soft Skills</h3>
+            <p>Leadership, communication, and field coordination</p>
+          </div>
+        </div>
+        <div class="skill-items">
+          <div class="skill-item"><img src="images/logos/communication.png" alt="Communication"><span>Communication</span></div>
+          <div class="skill-item"><img src="images/logos/leadership.png" alt="Leadership"><span>Team Leadership</span></div>
+          <div class="skill-item"><img src="images/logos/writing.png" alt="Writing"><span>Technical Writing</span></div>
+          <div class="skill-item"><img src="images/logos/volunteer.png" alt="Volunteer"><span>Community Engagement</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section class="section" id="extra">
+  <div class="container">
+    <div class="two-col">
+      <div class="col">
+        <div class="section-header left"><span class="section-tag">Certifications</span><h2 class="section-title">Credentials</h2></div>
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+          <div>
+            <h3>Communication and Soft Skills Certification</h3>
+            <p>12-week certification under DigiSkills.pk</p>
+            <p class="cert-id">Certificate ID: 8RNB2J5MK</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="section-header left"><span class="section-tag">Community</span><h2 class="section-title">Volunteer</h2></div>
+        <div class="cert-card">
+          <div class="cert-icon"><img src="images/logos/volunteer.png" alt="Volunteer"></div>
+          <div><h3>National Volunteer Corps</h3><p>Climate Resilience & Disaster Risk Reduction</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">Open to research collaborations, internships, and academic discussions.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:junaidalimsml@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><p>junaidalimsml@gmail.com</p></a>
+      <a href="https://github.com/junaidmsml" target="_blank" rel="noopener" class="contact-card"><i class="fab fa-github"></i><h4>GitHub</h4><p>github.com/junaidmsml</p></a>
+      <a href="#" class="contact-card"><i class="fab fa-linkedin"></i><h4>LinkedIn</h4><p>linkedin.com/in/junaidmsml</p></a>
+      <a href="#" class="contact-card"><i class="fas fa-map-pin"></i><h4>Location</h4><p>Faisalabad, Pakistan</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Junaid · Academic Portfolio · Civil Engineering Research</p>
+    <p class="footer-sub">Numerical Modelling · Geotechnical · Water Resources · Permafrost</p>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 20));
+
+// Mobile menu
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+  navToggle.querySelector('i').className = navLinks.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+});
+navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.querySelector('i').className = 'fas fa-bars';
+}));
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; }});
+}, { threshold: 0.1 });
+document.querySelectorAll('.project-card, .timeline-content, .edu-card, .exp-card, .skill-block, .skill-item, .cert-card, .survey-item, .contact-card, .achievement-card').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(24px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+  observer.observe(el);
+});
+
+// ===== CAROUSEL =====
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = carousel.querySelectorAll('.carousel-slide');
+  const prevBtn = carousel.querySelector('[data-prev]');
+  const nextBtn = carousel.querySelector('[data-next]');
+  const counter = carousel.querySelector('[data-counter]');
+  const dotsWrap = carousel.querySelector('[data-dots]');
+  let index = 0;
+  const total = slides.length;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i+1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = dotsWrap.querySelectorAll('.carousel-dot');
+
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    if (counter) counter.textContent = `${index+1} / ${total}`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }
+  function goTo(i) { index = (i + total) % total; update(); }
+  function next() { goTo(index + 1); }
+  function prev() { goTo(index - 1); }
+
+  if (nextBtn) nextBtn.addEventListener('click', next);
+  if (prevBtn) prevBtn.addEventListener('click', prev);
+
+  // Swipe support
+  let startX = 0, isDragging = false;
+  const container = carousel;
+  container.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+  container.addEventListener('touchend', e => {
+    if (!isDragging) return; isDragging = false;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
+  });
+  // Mouse drag
+  container.addEventListener('mousedown', e => { startX = e.clientX; isDragging = true; });
+  container.addEventListener('mouseup', e => {
+    if (!isDragging) return; isDragging = false;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 60) { dx < 0 ? next() : prev(); }
+  });
+  container.addEventListener('mouseleave', () => isDragging = false);
+
+  update();
+});
+</script>
+</body>
+</html>

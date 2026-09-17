@@ -178,6 +178,11 @@ ul{list-style:none}
 .survey-desc{background:#fff;padding:1.8rem 2rem;border-radius:20px;border:1px solid var(--border);border-left:4px solid var(--accent);box-shadow:var(--sh1)}
 .survey-desc p{font-size:.98rem;color:var(--muted);line-height:1.8}
 
+/* LAB GALLERY */
+.lab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.lab-grid img{width:100%;height:200px;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
+.lab-grid img:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+
 /* EXPERIENCE */
 .exp-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;max-width:1000px;margin:0 auto}
 .exp-card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh2);transition:.3s}
@@ -279,7 +284,11 @@ ul{list-style:none}
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#computational-projects">Computational Projects</a></li>
+      <li><a href="#design-projects">Design Projects</a></li>
+      <li><a href="#planning-projects">Planning Projects</a></li>
       <li><a href="#survey">Survey</a></li>
+      <li><a href="#lab-experience">Lab Experience</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -485,7 +494,7 @@ ul{list-style:none}
     <div class="section-header">
       <span class="section-tag">Portfolio</span>
       <h2 class="section-title">Selected Research Projects</h2>
-      <p class="section-subtitle">Numerical modelling, GIS analysis, and computational work across geotechnical, water, and environmental domains.</p>
+      <p class="section-subtitle">Numerical modelling and GIS analysis across geotechnical, water, and environmental domains.</p>
     </div>
     <div class="projects-grid">
 
@@ -529,6 +538,20 @@ ul{list-style:none}
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<!-- COMPUTATIONAL PROJECTS -->
+<section class="section section-alt" id="computational-projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Portfolio</span>
+      <h2 class="section-title">Computational Projects</h2>
+      <p class="section-subtitle">Automation and software tools built for civil engineering workflows.</p>
+    </div>
+    <div class="projects-grid">
+
       <article class="project-card">
         <div class="project-image"><img src="images/projects/road-embankment.png" alt="Road Embankment"><span class="project-badge">PLAXIS</span></div>
         <div class="project-body">
@@ -549,25 +572,98 @@ ul{list-style:none}
         </div>
       </article>
 
-      <article class="project-card">
-        <div class="project-image"><img src="images/projects/heritage-cracking.png" alt="Heritage Cracking"><span class="project-badge">PLAXIS</span></div>
-        <div class="project-body">
-          <h3>Forensic Geotechnical Assessment of a Historic Landmark</h3>
-          <p class="project-location"><i class="fas fa-map-pin"></i> Islamabad, Pakistan</p>
-          <p class="project-desc">Investigating multiple causes of structural cracking — seismic history, vegetation-induced weakening, and differential settlement — using numerical modelling in PLAXIS.</p>
-          <div class="project-tags"><span>PLAXIS</span><span>Forensic</span><span>Settlement</span></div>
-        </div>
-      </article>
+    </div>
+  </div>
+</section>
 
-      <article class="project-card">
-        <div class="project-image"><img src="images/projects/yukon-permafrost.png" alt="Yukon Permafrost"><span class="project-badge">Research</span></div>
-        <div class="project-body">
-          <h3>Yukon Permafrost Site Characterization</h3>
-          <p class="project-location"><i class="fas fa-map-pin"></i> Yukon, Canada</p>
-          <p class="project-desc">Characterizing Site 244-00 using subsurface profiles, geotechnical properties, ice observations, and temperature-monitoring data toward a research-based manuscript.</p>
-          <div class="project-tags"><span>Permafrost</span><span>Geotechnical</span><span>Thermal</span></div>
+<!-- DESIGN PROJECTS -->
+<section class="section" id="design-projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Drafting & Modelling</span>
+      <h2 class="section-title">Design Projects</h2>
+      <p class="section-subtitle">Drafting and design work using AutoCAD and Revit.</p>
+    </div>
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>AutoCAD Drawings</h3>
+          <p class="exp-role">2D Drafting & Technical Drawings</p>
         </div>
-      </article>
+        <ul class="exp-list">
+          <li>Produced technical drawings, plans, and layouts using AutoCAD.</li>
+        </ul>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/design/autocad1.png" alt="AutoCAD Drawing 1"></div>
+            <div class="carousel-slide"><img src="images/design/autocad2.png" alt="AutoCAD Drawing 2"></div>
+            <div class="carousel-slide"><img src="images/design/autocad3.png" alt="AutoCAD Drawing 3"></div>
+            <div class="carousel-slide"><img src="images/design/autocad4.png" alt="AutoCAD Drawing 4"></div>
+          </div>
+          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-counter" data-counter>1 / 4</div>
+          <div class="carousel-dots" data-dots></div>
+        </div>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>Revit Models</h3>
+          <p class="exp-role">Building Information Modelling (BIM)</p>
+        </div>
+        <ul class="exp-list">
+          <li>Developed 3D building models and documentation using Revit.</li>
+        </ul>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/design/revit1.png" alt="Revit Model 1"></div>
+            <div class="carousel-slide"><img src="images/design/revit2.png" alt="Revit Model 2"></div>
+            <div class="carousel-slide"><img src="images/design/revit3.png" alt="Revit Model 3"></div>
+            <div class="carousel-slide"><img src="images/design/revit4.png" alt="Revit Model 4"></div>
+          </div>
+          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-counter" data-counter>1 / 4</div>
+          <div class="carousel-dots" data-dots></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLANNING PROJECTS -->
+<section class="section" id="planning-projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Scheduling</span>
+      <h2 class="section-title">Planning Projects</h2>
+      <p class="section-subtitle">Project scheduling and planning using Primavera P6.</p>
+    </div>
+    <div class="exp-grid">
+
+      <div class="exp-card">
+        <div class="exp-head">
+          <h3>Primavera P6 Scheduling</h3>
+          <p class="exp-role">Project Planning & Scheduling</p>
+        </div>
+        <ul class="exp-list">
+          <li>Built project schedules, activity networks, and timelines using Primavera P6.</li>
+        </ul>
+        <div class="carousel" data-carousel>
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="images/planning/primavera1.png" alt="Primavera P6 Schedule 1"></div>
+            <div class="carousel-slide"><img src="images/planning/primavera2.png" alt="Primavera P6 Schedule 2"></div>
+            <div class="carousel-slide"><img src="images/planning/primavera3.png" alt="Primavera P6 Schedule 3"></div>
+          </div>
+          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
+          <div class="carousel-counter" data-counter>1 / 3</div>
+          <div class="carousel-dots" data-dots></div>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -588,6 +684,27 @@ ul{list-style:none}
     </div>
     <div class="survey-desc">
       <p>Led my team through traversing, topographic survey, and road alignment & curve setting using total station equipment. Converted raw Stonex instrument data into readable format, processed it in LISCAD, and produced final drawings and technical report in AutoCAD for submission. Our team achieved a <strong>top-2 ranking among 15 groups</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LAB EXPERIENCE -->
+<section class="section" id="lab-experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Coursework</span>
+      <h2 class="section-title">Lab Hands-on Experience</h2>
+      <p class="section-subtitle">Practical laboratory work across civil engineering coursework.</p>
+    </div>
+    <div class="lab-grid">
+      <img src="images/lab/lab1.png" alt="Lab Experience 1">
+      <img src="images/lab/lab2.png" alt="Lab Experience 2">
+      <img src="images/lab/lab3.png" alt="Lab Experience 3">
+      <img src="images/lab/lab4.png" alt="Lab Experience 4">
+      <img src="images/lab/lab5.png" alt="Lab Experience 5">
+      <img src="images/lab/lab6.png" alt="Lab Experience 6">
+      <img src="images/lab/lab7.png" alt="Lab Experience 7">
+      <img src="images/lab/lab8.png" alt="Lab Experience 8">
     </div>
   </div>
 </section>

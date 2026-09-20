@@ -116,7 +116,6 @@ ul{list-style:none}
 .achievement-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--gold))}
 .achievement-card:hover{transform:translateY(-6px);box-shadow:var(--sh3);border-color:var(--accent)}
 .ach-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:1.2rem}
-.ach-icon img{width:38px;height:38px;object-fit:contain}
 .achievement-card h3{font-size:1.1rem;color:var(--navy);font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em;line-height:1.4}
 .achievement-card p{font-size:.92rem;color:var(--muted);line-height:1.75}
 .achievement-card .ach-badge{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--gold));color:#fff;font-size:.72rem;font-weight:700;padding:.3rem .85rem;border-radius:40px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1rem}
@@ -164,6 +163,12 @@ ul{list-style:none}
 .project-location{font-size:.8rem;color:var(--accent);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
 .project-desc{font-size:.92rem;color:var(--muted);line-height:1.7;margin-bottom:1.2rem;flex:1}
 .project-tags{display:flex;flex-wrap:wrap;gap:.5rem;padding-top:1rem;border-top:1px solid var(--border)}
+
+/* DETAILS BUTTON */
+.details-btn{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.1rem;padding:.7rem 1.4rem;background:var(--navy);color:#fff;border-radius:40px;font-size:.82rem;font-weight:600;transition:.25s;text-decoration:none;width:fit-content}
+.details-btn:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 20px rgba(37,99,235,.28)}
+.details-btn i{font-size:.75rem;transition:transform .25s}
+.details-btn:hover i{transform:translateX(4px)}
 .project-tags span{background:var(--bg2);color:var(--navy);font-size:.75rem;font-weight:600;padding:.35rem .85rem;border-radius:40px;border:1px solid var(--border)}
 
 /* SURVEY */
@@ -209,7 +214,6 @@ ul{list-style:none}
 .skill-item{background:var(--bg);padding:1.1rem .9rem;border-radius:14px;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem;transition:.25s;cursor:default}
 .skill-item:hover{transform:translateY(-4px);box-shadow:var(--sh2);border-color:var(--accent);background:#fff}
 .skill-item img{width:44px;height:44px;object-fit:contain}
-.skill-item .skill-fa{width:44px;height:44px;display:grid;place-items:center;font-size:1.5rem;color:var(--accent);background:rgba(37,99,235,.08);border-radius:12px}
 .skill-item span{font-size:.82rem;font-weight:600;color:var(--navy);line-height:1.3}
 
 /* CERTS */
@@ -284,11 +288,8 @@ ul{list-style:none}
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#computational-projects">Computational Projects</a></li>
-      <li><a href="#design-projects">Design Projects</a></li>
-      <li><a href="#planning-projects">Planning Projects</a></li>
+      <li><a href="#computational-projects">Computational</a></li>
       <li><a href="#survey">Survey</a></li>
-      <li><a href="#lab-experience">Lab Experience</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
@@ -390,28 +391,24 @@ ul{list-style:none}
       <p class="section-subtitle">Selected honors and academic distinctions earned through research, leadership, and coursework.</p>
     </div>
     <div class="achievements-grid">
-
       <div class="achievement-card">
         <div class="ach-icon"><i class="fas fa-award"></i></div>
         <span class="ach-badge">Research Selection</span>
         <h3>Selected for University-Funded Research Project</h3>
         <p>Selected from a pool of over <strong>100 students</strong> to join a university-funded research project under <strong>Dr. Zulfiqar Ali</strong>, based on demonstrated technical skills and critical thinking — an uncommon opportunity for undergraduates.</p>
       </div>
-
       <div class="achievement-card">
         <div class="ach-icon"><i class="fas fa-users-cog"></i></div>
         <span class="ach-badge">Leadership</span>
         <h3>Top-2 Ranking in Advanced Engineering Survey</h3>
         <p>Led my team to a <strong>top-2 ranking among 15 groups</strong> during a university-wide 1-week Advanced Engineering Survey, showcasing strong leadership in field data collection and technical reporting.</p>
       </div>
-
       <div class="achievement-card">
         <div class="ach-icon"><i class="fas fa-trophy"></i></div>
         <span class="ach-badge">Academic Excellence</span>
         <h3>Highest Grade in Soil Mechanics</h3>
         <p>Achieved the <strong>highest grade among 50 students</strong> in Soil Mechanics, building the strong theoretical foundation that now underpins my geotechnical research.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -424,7 +421,6 @@ ul{list-style:none}
       <h2 class="section-title">Research Experience</h2>
     </div>
     <div class="timeline">
-
       <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
@@ -438,8 +434,6 @@ ul{list-style:none}
             <li>Assessed differential settlement as a contributing factor to the observed cracking, alongside the seismic and vegetation-related causes under study.</li>
             <li>Currently performing numerical modelling in <strong>PLAXIS</strong> to quantify differential settlement's relative contribution to the structural distress.</li>
           </ul>
-
-          <!-- Carousel: 4 images -->
           <div class="carousel" data-carousel>
             <div class="carousel-track">
               <div class="carousel-slide"><img src="images/research/heritage1.png" alt="Heritage 1"></div>
@@ -452,6 +446,7 @@ ul{list-style:none}
             <div class="carousel-counter" data-counter>1 / 4</div>
             <div class="carousel-dots" data-dots></div>
           </div>
+          <a href="projects/heritage-cracking.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
 
@@ -467,8 +462,6 @@ ul{list-style:none}
             <li>Independently investigating permafrost conditions and subsurface characteristics using publicly available field, geotechnical, and thermal observations from the <strong>Yukon Permafrost Database</strong>.</li>
             <li>Characterizing Site 244-00 using available subsurface profiles, geotechnical properties, ice observations, and nearby temperature-monitoring data toward a research-based manuscript.</li>
           </ul>
-
-          <!-- Carousel: 4 images -->
           <div class="carousel" data-carousel>
             <div class="carousel-track">
               <div class="carousel-slide"><img src="images/research/yukon1.png" alt="Yukon 1"></div>
@@ -481,9 +474,9 @@ ul{list-style:none}
             <div class="carousel-counter" data-counter>1 / 4</div>
             <div class="carousel-dots" data-dots></div>
           </div>
+          <a href="projects/yukon-permafrost.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -505,6 +498,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Qinghai-Tibet Plateau, China</p>
           <p class="project-desc">Built a coupled seepage-thermal numerical model in GeoStudio (SEEP/W & TEMP/W) to simulate freeze-thaw cycles, validating model accuracy against published field results.</p>
           <div class="project-tags"><span>SEEP/W</span><span>TEMP/W</span><span>Freeze-Thaw</span></div>
+          <a href="projects/embankment-thermal.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -515,6 +509,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Loxahatchee L-8 Reservoir, FL, USA</p>
           <p class="project-desc">Independently built SEEP/W models to investigate steady-state and rapid-drawdown seepage, then used SLOPE/W to evaluate factor of safety under operational and drawdown conditions.</p>
           <div class="project-tags"><span>SEEP/W</span><span>SLOPE/W</span><span>Seepage</span></div>
+          <a href="projects/earth-dam.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -525,6 +520,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> New Brunswick, Canada</p>
           <p class="project-desc">Developed a 2D flood model integrating 1m LiDAR DEM, CHS bathymetric data, and hydrometric records to simulate flood propagation and generate flood-hazard maps.</p>
           <div class="project-tags"><span>ArcGIS</span><span>HEC-RAS 2D</span><span>LiDAR</span></div>
+          <a href="projects/flood-inundation.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -535,6 +531,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Khyber Pakhtunkhwa, Pakistan</p>
           <p class="project-desc">Investigated spatiotemporal rainfall variability (2018–2025) using PERSIANN-CCS/CDR data and GIS-based spatial analysis, quantifying the 2022 rainfall anomaly and its relationship with flood impacts.</p>
           <div class="project-tags"><span>PERSIANN</span><span>GIS</span><span>Climate</span></div>
+          <a href="projects/rainfall-variability.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -559,6 +556,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
           <p class="project-desc">Developed a finite element model in PLAXIS to evaluate settlement and slope stability across multiple construction phases, with a Python automation script for post-processing.</p>
           <div class="project-tags"><span>PLAXIS 2D</span><span>Python</span><span>Automation</span></div>
+          <a href="projects/road-embankment.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -569,6 +567,7 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
           <p class="project-desc">Developed a construction management suite with 9 engineering tools spanning pre-construction, execution, and handover — including geotechnical scoring, ACI mix design, and cost estimation.</p>
           <div class="project-tags"><span>Python</span><span>NumPy</span><span>Web</span></div>
+          <a href="projects/buildease.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
         </div>
       </article>
 
@@ -576,101 +575,8 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- DESIGN PROJECTS -->
-<section class="section" id="design-projects">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Drafting & Modelling</span>
-      <h2 class="section-title">Design Projects</h2>
-      <p class="section-subtitle">Drafting and design work using AutoCAD and Revit.</p>
-    </div>
-    <div class="exp-grid">
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <h3>AutoCAD Drawings</h3>
-          <p class="exp-role">2D Drafting & Technical Drawings</p>
-        </div>
-        <ul class="exp-list">
-          <li>Produced technical drawings, plans, and layouts using AutoCAD.</li>
-        </ul>
-        <div class="carousel" data-carousel>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="images/design/autocad1.png" alt="AutoCAD Drawing 1"></div>
-            <div class="carousel-slide"><img src="images/design/autocad2.png" alt="AutoCAD Drawing 2"></div>
-            <div class="carousel-slide"><img src="images/design/autocad3.png" alt="AutoCAD Drawing 3"></div>
-            <div class="carousel-slide"><img src="images/design/autocad4.png" alt="AutoCAD Drawing 4"></div>
-          </div>
-          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
-          <div class="carousel-counter" data-counter>1 / 4</div>
-          <div class="carousel-dots" data-dots></div>
-        </div>
-      </div>
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <h3>Revit Models</h3>
-          <p class="exp-role">Building Information Modelling (BIM)</p>
-        </div>
-        <ul class="exp-list">
-          <li>Developed 3D building models and documentation using Revit.</li>
-        </ul>
-        <div class="carousel" data-carousel>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="images/design/revit1.png" alt="Revit Model 1"></div>
-            <div class="carousel-slide"><img src="images/design/revit2.png" alt="Revit Model 2"></div>
-            <div class="carousel-slide"><img src="images/design/revit3.png" alt="Revit Model 3"></div>
-            <div class="carousel-slide"><img src="images/design/revit4.png" alt="Revit Model 4"></div>
-          </div>
-          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
-          <div class="carousel-counter" data-counter>1 / 4</div>
-          <div class="carousel-dots" data-dots></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PLANNING PROJECTS -->
-<section class="section" id="planning-projects">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Scheduling</span>
-      <h2 class="section-title">Planning Projects</h2>
-      <p class="section-subtitle">Project scheduling and planning using Primavera P6.</p>
-    </div>
-    <div class="exp-grid">
-
-      <div class="exp-card">
-        <div class="exp-head">
-          <h3>Primavera P6 Scheduling</h3>
-          <p class="exp-role">Project Planning & Scheduling</p>
-        </div>
-        <ul class="exp-list">
-          <li>Built project schedules, activity networks, and timelines using Primavera P6.</li>
-        </ul>
-        <div class="carousel" data-carousel>
-          <div class="carousel-track">
-            <div class="carousel-slide"><img src="images/planning/primavera1.png" alt="Primavera P6 Schedule 1"></div>
-            <div class="carousel-slide"><img src="images/planning/primavera2.png" alt="Primavera P6 Schedule 2"></div>
-            <div class="carousel-slide"><img src="images/planning/primavera3.png" alt="Primavera P6 Schedule 3"></div>
-          </div>
-          <button class="carousel-btn prev" data-prev><i class="fas fa-chevron-left"></i></button>
-          <button class="carousel-btn next" data-next><i class="fas fa-chevron-right"></i></button>
-          <div class="carousel-counter" data-counter>1 / 3</div>
-          <div class="carousel-dots" data-dots></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- SURVEY -->
-<section class="section section-alt" id="survey">
+<section class="section" id="survey">
   <div class="container">
     <div class="section-header">
       <span class="section-tag">Fieldwork</span>
@@ -689,7 +595,7 @@ ul{list-style:none}
 </section>
 
 <!-- LAB EXPERIENCE -->
-<section class="section" id="lab-experience">
+<section class="section section-alt" id="lab-experience">
   <div class="container">
     <div class="section-header">
       <span class="section-tag">Coursework</span>
@@ -780,10 +686,7 @@ ul{list-style:none}
       <h2 class="section-title">Skills & Tools</h2>
       <p class="section-subtitle">Each tool with its official logo for quick visual recognition.</p>
     </div>
-
     <div class="skills-wrapper">
-
-      <!-- Numerical Modelling -->
       <div class="skill-block">
         <div class="skill-block-head">
           <div class="skill-block-icon"><i class="fas fa-cubes"></i></div>
@@ -799,7 +702,6 @@ ul{list-style:none}
         </div>
       </div>
 
-      <!-- GIS & Surveying -->
       <div class="skill-block">
         <div class="skill-block-head">
           <div class="skill-block-icon"><i class="fas fa-map"></i></div>
@@ -816,7 +718,6 @@ ul{list-style:none}
         </div>
       </div>
 
-      <!-- Data Processing -->
       <div class="skill-block">
         <div class="skill-block-head">
           <div class="skill-block-icon"><i class="fas fa-code"></i></div>
@@ -832,7 +733,6 @@ ul{list-style:none}
         </div>
       </div>
 
-      <!-- Soft Skills -->
       <div class="skill-block">
         <div class="skill-block-head">
           <div class="skill-block-icon"><i class="fas fa-users"></i></div>
@@ -848,7 +748,6 @@ ul{list-style:none}
           <div class="skill-item"><img src="images/logos/volunteer.png" alt="Volunteer"><span>Community Engagement</span></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -942,7 +841,6 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   let index = 0;
   const total = slides.length;
 
-  // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -964,7 +862,6 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   if (nextBtn) nextBtn.addEventListener('click', next);
   if (prevBtn) prevBtn.addEventListener('click', prev);
 
-  // Swipe support
   let startX = 0, isDragging = false;
   const container = carousel;
   container.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
@@ -973,7 +870,6 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
     const dx = e.changedTouches[0].clientX - startX;
     if (Math.abs(dx) > 40) { dx < 0 ? next() : prev(); }
   });
-  // Mouse drag
   container.addEventListener('mousedown', e => { startX = e.clientX; isDragging = true; });
   container.addEventListener('mouseup', e => {
     if (!isDragging) return; isDragging = false;

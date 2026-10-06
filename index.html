@@ -155,7 +155,7 @@ ul{list-style:none}
 .project-card{background:#fff;border-radius:24px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh1);transition:.35s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
 .project-card:hover{transform:translateY(-8px);box-shadow:var(--sh3);border-color:var(--accent)}
 .project-image{position:relative;height:210px;overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--accent))}
-.project-image img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.project-image img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.5s}
 .project-card:hover .project-image img{transform:scale(1.06)}
 .project-badge{position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);padding:.35rem 1rem;border-radius:40px;font-size:.75rem;font-weight:700;color:var(--navy);letter-spacing:.04em;text-transform:uppercase}
 .project-body{padding:1.7rem 1.6rem 1.8rem;flex:1;display:flex;flex-direction:column}
@@ -571,6 +571,17 @@ ul{list-style:none}
         </div>
       </article>
 
+      <article class="project-card">
+        <div class="project-image"><img src="images/projects/precipitation-analyzer.png" alt="Precipitation Analyzer"><span class="project-badge">Python</span></div>
+        <div class="project-body">
+          <h3>Precipitation Analyzer — Hydrological Data Suite</h3>
+          <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
+          <p class="project-desc">Interactive Python tool that ingests CSV/Excel precipitation data, runs statistical analysis, generates time-series and cumulative charts, and produces downloadable PDF reports.</p>
+          <div class="project-tags"><span>Python</span><span>Streamlit</span><span>Plotly</span><span>PDF</span></div>
+          <a href="projects/precipitation-analyzer.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -789,7 +800,7 @@ ul{list-style:none}
     <div class="contact-grid">
       <a href="mailto:junaidalimsml@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><h4>Email</h4><p>junaidalimsml@gmail.com</p></a>
       <a href="https://github.com/junaidmsml" target="_blank" rel="noopener" class="contact-card"><i class="fab fa-github"></i><h4>GitHub</h4><p>github.com/junaidmsml</p></a>
-      <a href="#" class="contact-card"><i class="fab fa-linkedin"></i><h4>LinkedIn</h4><p>linkedin.com/in/junaidmsml</p></a>
+      <a href="#" class="contact-card"><i class="fab fa-linkedin"></i><h4>LinkedIn</h4><p>linkedin.com/in/junaidali</p></a>
       <a href="#" class="contact-card"><i class="fas fa-map-pin"></i><h4>Location</h4><p>Faisalabad, Pakistan</p></a>
     </div>
   </div>

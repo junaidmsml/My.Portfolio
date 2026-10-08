@@ -171,6 +171,13 @@ ul{list-style:none}
 .details-btn:hover i{transform:translateX(4px)}
 .project-tags span{background:var(--bg2);color:var(--navy);font-size:.75rem;font-weight:600;padding:.35rem .85rem;border-radius:40px;border:1px solid var(--border)}
 
+/* PROJECT ACTIONS (Live Demo + Details) */
+.project-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.1rem;align-items:center}
+.project-actions .details-btn{margin-top:0}
+.live-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;background:linear-gradient(135deg,#10b981,#059669);color:#fff;border-radius:40px;font-size:.82rem;font-weight:600;transition:.25s;text-decoration:none;width:fit-content;box-shadow:0 4px 12px rgba(16,185,129,.25)}
+.live-btn:hover{background:linear-gradient(135deg,#059669,#047857);transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,185,129,.4)}
+.live-btn i{font-size:.75rem;color:#fff}
+
 /* SURVEY */
 .survey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;margin-bottom:2.5rem}
 .survey-item{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--sh1);transition:.3s}
@@ -578,7 +585,10 @@ ul{list-style:none}
           <p class="project-location"><i class="fas fa-map-pin"></i> Computational Project</p>
           <p class="project-desc">Interactive Python tool that ingests CSV/Excel precipitation data, runs statistical analysis, generates time-series and cumulative charts, and produces downloadable PDF reports.</p>
           <div class="project-tags"><span>Python</span><span>Streamlit</span><span>Plotly</span><span>PDF</span></div>
-          <a href="projects/precipitation-analyzer.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
+          <div class="project-actions">
+            <a href="https://junaidmsml.github.io/new_index/" target="_blank" rel="noopener" class="live-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="projects/precipitation-analyzer.html" class="details-btn">Click for Details <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
       </article>
 
